@@ -17,25 +17,26 @@ const Chart = () => {
   const lineChart = dailyData ? (
     <Line
       data={{
-        labels: dailyData.map(({ data }) => data),
+        labels: dailyData.map(({ date }) => date),
         datasets: [
           {
-            data: dailyData.map(({ confirmed }) => confirmed),
-            label: "infected",
+            data: dailyData.map((data) => data.confirmed),
+            label: "Infected",
             border: "#3333ff",
             fill: true,
           },
           {
-            data: dailyData.map(({ deaths }) => deaths),
-            label: "infected",
-            backgroundColor: "rgba(255,0,0,0.5)",
+            data: dailyData.map((data) => data.deaths),
+            label: "Deaths",
+            backgroundColor: "rgba(255, 0, 0, 0.5)",
+            borderColor: "red",
             fill: true,
           },
         ],
       }}
     />
   ) : null;
-  return <div className="container">{lineChart}</div>;
+  return <div className={styles.container}>{lineChart}</div>;
 };
 
 export default Chart;

@@ -28,9 +28,10 @@ export const fetchDailyDate = async () => {
     //     console.log(el.confirmed);
     //   })
     // );
-    return data.map(({ confirmed, deaths }) => ({
+    return data.map(({ confirmed, deaths, reportDate: date }) => ({
       confirmed: confirmed.total,
       deaths: deaths.total,
+      date,
     }));
   } catch (error) {
     return error;
