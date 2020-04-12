@@ -20,6 +20,7 @@ class App extends React.Component {
     const { data } = this.state;
     return (
       <div className={styles.container}>
+        <img width="400px" src={require("./assets/image/corona.jpg")} />
         <Cards data={data} />
         <CountryPicker handleCountryChange={this.handleCountryChange} />
         <Chart />
