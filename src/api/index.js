@@ -15,7 +15,5 @@ export const fetchData = async () => {
       lastUpdate,
     };
     return modifiedData;
-  } catch (error) {
-    console.log(error);
-  }
+  } catch (error) {}
 };
